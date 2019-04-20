@@ -1,0 +1,26 @@
+{
+  "name": "jujoco.github.io",
+  "version": "1.0.0",
+  "description": "Personal site",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jujoco/jujoco.github.io.git"
+  },
+  "keywords": [
+    "jujoco",
+    "full",
+    "stack",
+    "software",
+    "engineer"
+  ],
+  "author": "julian cobos",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jujoco/jujoco.github.io/issues"
+  },
+  "homepage": "https://github.com/jujoco/jujoco.github.io#readme"
+}
