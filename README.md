@@ -1,2 +1,3 @@
-# jujoco.github.io
+# jujoco.com
+
 Personal Website
