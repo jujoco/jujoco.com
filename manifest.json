@@ -1,0 +1,21 @@
+{
+  "short_name": "Jujoco",
+  "name": "Julian J. Cobos",
+  "icons": [
+    {
+      "src": "./images/jujoco192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/images/jujoco512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "./",
+  "background_color": "#2a3f82",
+  "display": "standalone",
+  "scope": "",
+  "theme_color": "#334170"
+}
