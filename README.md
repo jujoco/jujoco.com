@@ -1,3 +1,3 @@
 # jujoco.com
 
-Personal Website
+A repo of my personal website.
