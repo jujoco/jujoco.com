@@ -15,6 +15,7 @@ if ('serviceWorker' in navigator) {
 const CACHE_NAME = 'sw-cache-v1';
 const urlsToCache = [
   '/',
+  '/index.html',
   '/assets/css/main.css',
   '/assets/js/main.js'
 ];
