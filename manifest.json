@@ -3,6 +3,26 @@
   "name": "Julian J. Cobos",
   "icons": [
     {
+      "src": "/images/jujoco48.png",
+      "type": "image/png",
+      "sizes": "48x48"
+    },
+    {
+      "src": "/images/jujoco72.png",
+      "type": "image/png",
+      "sizes": "72x72"
+    },
+    {
+      "src": "/images/jujoco96.png",
+      "type": "image/png",
+      "sizes": "96x96"
+    },
+    {
+      "src": "/images/jujoco144.png",
+      "type": "image/png",
+      "sizes": "144x144"
+    },
+    {
       "src": "./images/jujoco192.png",
       "type": "image/png",
       "sizes": "192x192"
