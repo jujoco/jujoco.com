@@ -526,10 +526,11 @@ input, select, textarea {
 		}
 
 		.icon.major {
+			width: 60%;
 			border: solid 1px;
 			display: inline-block;
 			border-radius: 100%;
-			padding: 0.65em;
+			padding: 0.35em;
 			margin: 0 0 2em 0;
 			cursor: default;
 		}
