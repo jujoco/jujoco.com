@@ -94,7 +94,7 @@ input, select, textarea {
 
 	body {
 		background-color: #003366;
-		background-image: url("images/overlay.png"), linear-gradient(55deg, #0099CC 25%, #003366 75%);
+		background-image: url("images/overlay.png"), linear-gradient(70deg, #0099CC 10%, #003366 90%);
 	}
 
 		body.is-preload *, body.is-preload *:before, body.is-preload *:after {
