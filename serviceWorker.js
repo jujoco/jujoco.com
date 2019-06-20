@@ -14,8 +14,8 @@ if ('serviceWorker' in navigator) {
 
 const staticCacheName = 'sw-cache-v2.0';
 const filesToCache = [
+  '/index.html',
   '/assets/css',
-  'index.html',
 ];
 
 self.addEventListener('install', event => {
@@ -43,7 +43,7 @@ self.addEventListener('fetch', event => {
         // TODO 4 - Add fetched files to the cache
 
       }).catch(error => {
-
+        console.log(error);
         // TODO 6 - Respond with custom offline page
 
       })
