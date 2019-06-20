@@ -14,13 +14,13 @@ if ('serviceWorker' in navigator) {
 
 var CACHE_NAME = 'my-site-cache-v1';
 var urlsToCache = [
-  '/',
   '/index.html',
 ];
 
 self.addEventListener('install', (event) => {
   self.skipWaiting();
   // Perform install steps
+  console.log('INSTALLING');
   event.waitUntil(
     caches.open(CACHE_NAME)
       .then((cache) => {
@@ -31,7 +31,7 @@ self.addEventListener('install', (event) => {
 });
 
 self.addEventListener('activate', function (event) {
-
+  console.log('ACTIVATING');
   var cacheWhitelist = ['pages-cache-v1', 'blog-posts-cache-v1'];
 
   event.waitUntil(
@@ -48,6 +48,7 @@ self.addEventListener('activate', function (event) {
 });
 
 self.addEventListener('fetch', (event) => {
+  console.log('FETCHING');
   event.respondWith(
     caches.match(event.request)
       .then((response) => {
@@ -58,7 +59,7 @@ self.addEventListener('fetch', (event) => {
         }
         return fetch(event.request);
       }).catch(err => {
-        console.log('there was and Error in the Fetch Event')
+        console.log('there was and Error in the Fetch Event');
       })
   );
 });
