@@ -14,6 +14,7 @@ if ('serviceWorker' in navigator) {
 
 const staticCacheName = 'sw-cache-v2.0';
 const filesToCache = [
+  '/',
   '/index.html',
   '/assets/css',
 ];
@@ -39,13 +40,18 @@ self.addEventListener('fetch', event => {
         }
         console.log('Network request for ', event.request.url);
         return fetch(event.request)
-
-        // TODO 4 - Add fetched files to the cache
+          // dynamically Add fetched files to the cache
+          .then(response => {
+            // TODO - Respond with custom 404 page
+            return caches.open(staticCacheName).then(cache => {
+              cache.put(event.request.url, response.clone());
+              return response;
+            });
+          });
 
       }).catch(error => {
         console.log(error);
-        // TODO 6 - Respond with custom offline page
-
+        // TODO - Respond with custom offline page
       })
   );
 });
