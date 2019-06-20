@@ -1,75 +1,64 @@
 if ('serviceWorker' in navigator) {
-  window.addEventListener('load', function () {
+  window.addEventListener('load', () => {
     navigator.serviceWorker
       .register('/serviceWorker.js')
       .then((registration) => {
         // Registration was successful
         console.log('ServiceWorker registration successful with scope: ', registration.scope);
-      }, function (err) {
+      }, (err) => {
         // registration failed :(
         console.log('ServiceWorker registration failed: ', err);
       });
   });
 }
 
-const staticCacheName = 'sw-cache-v2.0';
-const filesToCache = [
+var CACHE_NAME = 'my-site-cache-v1';
+var urlsToCache = [
   '/',
   '/index.html',
-  '/assets/css',
 ];
 
-self.addEventListener('install', event => {
-  console.log('Attempting to install service worker and cache static assets');
+self.addEventListener('install', (event) => {
+  self.skipWaiting();
+  // Perform install steps
   event.waitUntil(
-    caches.open(staticCacheName)
-      .then(cache => {
-        return cache.addAll(filesToCache);
+    caches.open(CACHE_NAME)
+      .then((cache) => {
+        console.log('Opened cache');
+        return cache.addAll(urlsToCache);
       })
   );
 });
 
-self.addEventListener('fetch', event => {
-  console.log('Fetch event for ', event.request.url);
-  event.respondWith(
-    caches.match(event.request)
-      .then(response => {
-        if (response) {
-          console.log('Found ', event.request.url, ' in cache');
-          return response;
-        }
-        console.log('Network request for ', event.request.url);
-        return fetch(event.request)
-          // dynamically Add fetched files to the cache
-          .then(response => {
-            // TODO - Respond with custom 404 page
-            return caches.open(staticCacheName).then(cache => {
-              cache.put(event.request.url, response.clone());
-              return response;
-            });
-          });
+self.addEventListener('activate', function (event) {
 
-      }).catch(error => {
-        console.log(error);
-        // TODO - Respond with custom offline page
-      })
-  );
-});
-
-self.addEventListener('activate', event => {
-  console.log('Activating new service worker...');
-
-  const cacheWhitelist = [staticCacheName];
+  var cacheWhitelist = ['pages-cache-v1', 'blog-posts-cache-v1'];
 
   event.waitUntil(
-    caches.keys().then(cacheNames => {
+    caches.keys().then((cacheNames) => {
       return Promise.all(
-        cacheNames.map(cacheName => {
+        cacheNames.map((cacheName) => {
           if (cacheWhitelist.indexOf(cacheName) === -1) {
             return caches.delete(cacheName);
           }
         })
       );
     })
+  );
+});
+
+self.addEventListener('fetch', (event) => {
+  event.respondWith(
+    caches.match(event.request)
+      .then((response) => {
+        // Cache hit - return response
+        if (response) {
+          console.log("inside fetch first condition")
+          return response;
+        }
+        return fetch(event.request);
+      }).catch(err => {
+        console.log('there was and Error in the Fetch Event')
+      })
   );
 });
