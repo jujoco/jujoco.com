@@ -12,9 +12,9 @@ if ('serviceWorker' in navigator) {
   });
 }
 
-const CACHE_NAME = 'sw-cache-v2';
+const CACHE_NAME = 'sw-cache-v2.0';
 const urlsToCache = [
-  '/',
+  '/index.html',
 ];
 
 self.addEventListener('install', (event) => {
