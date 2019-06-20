@@ -12,7 +12,7 @@ if ('serviceWorker' in navigator) {
   });
 }
 
-const CACHE_NAME = 'sw-cache-v1';
+const CACHE_NAME = 'sw-cache-v2';
 const urlsToCache = [
   '/',
 ];
