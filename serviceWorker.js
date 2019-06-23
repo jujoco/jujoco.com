@@ -12,10 +12,11 @@ if ('serviceWorker' in navigator) {
   });
 }
 
-var CACHE_NAME = 'jujoco-cache-v1';
+var CACHE_NAME = 'jujoco-cache-v1.1';
 var filesToCache = [
   '/',
   '/index.html',
+  '/assets',
 ];
 
 self.addEventListener('install', (event) => {
