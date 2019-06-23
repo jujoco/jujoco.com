@@ -12,11 +12,12 @@ if ('serviceWorker' in navigator) {
   });
 }
 
-var CACHE_NAME = 'jujoco-cache-v1.1';
+var CACHE_NAME = 'jujoco-cache-v1.11';
 var filesToCache = [
   '/',
   '/index.html',
-  '/assets',
+  '/images',
+  '/images/megacart.png',
 ];
 
 self.addEventListener('install', (event) => {
