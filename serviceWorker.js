@@ -12,53 +12,43 @@ if ('serviceWorker' in navigator) {
   });
 }
 
-var CACHE_NAME = 'my-site-cache-v1';
-var urlsToCache = [
+var CACHE_NAME = 'jujoco-cache-v1';
+var filesToCache = [
+  '/',
   '/index.html',
 ];
 
 self.addEventListener('install', (event) => {
-  self.skipWaiting();
+  // self.skipWaiting();
   // Perform install steps
-  console.log('INSTALLING');
   event.waitUntil(
-    caches.open(CACHE_NAME)
-      .then((cache) => {
-        console.log('Opened cache');
-        return cache.addAll(urlsToCache);
-      })
-  );
-});
-
-self.addEventListener('activate', function (event) {
-  console.log('ACTIVATING');
-  var cacheWhitelist = ['pages-cache-v1', 'blog-posts-cache-v1'];
-
-  event.waitUntil(
-    caches.keys().then((cacheNames) => {
-      return Promise.all(
-        cacheNames.map((cacheName) => {
-          if (cacheWhitelist.indexOf(cacheName) === -1) {
-            return caches.delete(cacheName);
-          }
-        })
-      );
+    caches.open(CACHE_NAME).then(cache => {
+      console.log('Opened cache');
+      return cache.addAll(filesToCache);
+    }).then(() => {
+      return self.skipWaiting();
     })
   );
 });
 
+self.addEventListener('activate', (event) => {
+  event.waitUntil(
+    caches.keys().then(cacheNames => {
+      return Promise.all(cacheNames.map(cacheName => {
+        if (cacheName !== CACHE_NAME) {
+          return caches.delete(cacheName);
+        }
+      }));
+    }));
+  return self.clients.claim();
+});
+
 self.addEventListener('fetch', (event) => {
-  console.log('FETCHING');
   event.respondWith(
     caches.match(event.request)
-      .then((response) => {
-        // Cache hit - return response
-        if (response) {
-          console.log("inside fetch first condition")
-          return response;
-        }
-        return fetch(event.request);
-      }).catch(err => {
+      .then(response => {
+        return response || fetch(event.request);
+      }).catch(() => {
         console.log('there was and Error in the Fetch Event');
       })
   );
