@@ -13,8 +13,6 @@ var filesToCache = [
 ];
 
 self.addEventListener('install', (event) => {
-  console.log('Installing')
-  debugger;
   event.waitUntil(
     caches.open(CACHE_NAME).then(cache => {
       console.log('Opened cache');
@@ -25,12 +23,10 @@ self.addEventListener('install', (event) => {
 });
 
 self.addEventListener('activate', (event) => {
-  console.log('Activating');
   event.waitUntil(
     caches.keys().then(cacheNames => {
       return Promise.all(cacheNames.map(cacheName => {
         if (cacheName !== CACHE_NAME) {
-          console.log('[ServiceWorker] Removing old cache', cacheName);
           return caches.delete(cacheName);
         }
       }));
@@ -39,7 +35,6 @@ self.addEventListener('activate', (event) => {
 });
 
 self.addEventListener('fetch', function (event) {
-  console.log('fetching');
   event.respondWith(
     caches.match(event.request)
       .then(response => {
