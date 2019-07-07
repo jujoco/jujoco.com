@@ -1,4 +1,4 @@
-var CACHE_NAME = 'jujoco-cache-v2.2';
+var CACHE_NAME = 'jujoco-cache-v2.3';
 
 var filesToCache = [
   '/index.html',
@@ -36,7 +36,7 @@ self.addEventListener('activate', event => {
   self.clients.claim();
 });
 
-self.addEventListener('fetch', function(event) {
+self.addEventListener('fetch', function (event) {
   event.respondWith(
     caches.match(event.request).then(response => {
       // Cache hit - return response
