@@ -233,19 +233,18 @@
       window.addEventListener('load', () => {
         navigator.serviceWorker.register('/serviceWorker.js').then(
           registration => {
-            // Registration was successful
             console.log(
-              'ServiceWorker registration successful with scope: ',
+              'ServiceWorker registration successful: ',
               registration.scope
             );
           },
           err => {
-            // registration failed :(
             console.log('ServiceWorker registration failed: ', err);
           }
         );
       });
     }
+    console.log("Hi There! Thanks for visiting my page. If you're hiring frontend developers, I would love to hear about it.")
   </script>
 </body>
 
