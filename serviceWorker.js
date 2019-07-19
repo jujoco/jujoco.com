@@ -1,4 +1,4 @@
-var CACHE_NAME = 'jujoco-cache-v2.4';
+var CACHE_NAME = 'jujoco-cache-v2.5';
 
 var filesToCache = [
   '/index.html',
