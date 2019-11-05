@@ -1,27 +1,27 @@
-var CACHE_NAME = 'jujoco-cache-v2.5';
+var CACHE_NAME = "jujoco-cache-v2.6";
 
 var filesToCache = [
-  '/index.html',
-  '/images/jujoco192.png',
-  '/images/jujocoHeadshot.jpg',
-  '/images/megacart.png',
-  '/images/outfitters.png',
-  '/images/memodis.png',
-  '/assets/css/images/overlay.png',
-  '/assets/css/main.css',
+  "/index.html",
+  "/images/jujoco192.png",
+  "/images/jujocoHeadshot.jpg",
+  "/images/megacart.png",
+  "/images/outfitters.png",
+  "/images/memodis.png",
+  "/assets/css/images/overlay.png",
+  "/assets/css/main.css"
 ];
 
-self.addEventListener('install', event => {
+self.addEventListener("install", event => {
   event.waitUntil(
     caches.open(CACHE_NAME).then(cache => {
-      console.log('Opened cache');
+      console.log("Opened cache");
       return cache.addAll(filesToCache);
     })
   );
   self.skipWaiting();
 });
 
-self.addEventListener('activate', event => {
+self.addEventListener("activate", event => {
   event.waitUntil(
     caches.keys().then(cacheNames => {
       return Promise.all(
@@ -36,7 +36,7 @@ self.addEventListener('activate', event => {
   self.clients.claim();
 });
 
-self.addEventListener('fetch', function (event) {
+self.addEventListener("fetch", function(event) {
   event.respondWith(
     caches.match(event.request).then(response => {
       // Cache hit - return response
@@ -46,7 +46,7 @@ self.addEventListener('fetch', function (event) {
 
       return fetch(event.request).then(response => {
         // Check if we received a valid response
-        if (!response || response.status !== 200 || response.type !== 'basic') {
+        if (!response || response.status !== 200 || response.type !== "basic") {
           return response;
         }
 
