@@ -1,4 +1,4 @@
-// const contentful = require("contentful");
+document.querySelector('body').classList.toggle('is-preload');
 
 const client = contentful.createClient({
   space: "11nqwoqf3iw0",

@@ -1,12 +1,10 @@
-var CACHE_NAME = "jujoco-cache-v2.6";
+var CACHE_NAME = "jujoco-cache-v2.7";
 
 var filesToCache = [
   "/index.html",
+  "/main.js",
   "/images/jujoco192.png",
   "/images/jujocoHeadshot.jpg",
-  "/images/megacart.png",
-  "/images/outfitters.png",
-  "/images/memodis.png",
   "/assets/css/images/overlay.png",
   "/assets/css/main.css"
 ];
@@ -36,7 +34,7 @@ self.addEventListener("activate", event => {
   self.clients.claim();
 });
 
-self.addEventListener("fetch", function(event) {
+self.addEventListener("fetch", function (event) {
   event.respondWith(
     caches.match(event.request).then(response => {
       // Cache hit - return response
