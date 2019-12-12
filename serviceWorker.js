@@ -1,6 +1,6 @@
-var CACHE_NAME = "jujoco-cache-v2.8";
+const CACHE_NAME = "jujoco-cache-v2.8";
 
-var filesToCache = [
+const filesToCache = [
   "/index.html",
   "/main.js",
   "/images/jujoco192.png",
@@ -8,6 +8,12 @@ var filesToCache = [
   "/assets/css/images/overlay.png",
   "/assets/css/main.css"
 ];
+
+const collection = document.getElementsByClassName('icon major');
+const imgs = [...collection];
+imgs.forEach(img => {
+  filesToCache.push(img.src);
+});
 
 self.addEventListener("install", event => {
   event.waitUntil(
