@@ -9,12 +9,6 @@ const filesToCache = [
   "/assets/css/main.css"
 ];
 
-const collection = document.getElementsByClassName('icon major');
-const imgs = [...collection];
-imgs.forEach(img => {
-  filesToCache.push(img.src);
-});
-
 self.addEventListener("install", event => {
   event.waitUntil(
     caches.open(CACHE_NAME).then(cache => {
