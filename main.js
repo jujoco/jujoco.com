@@ -7,10 +7,10 @@ const client = contentful.createClient({
 
 client
   .getAssets()
-  .then(assets => {
+  .then(function(assets) {
     let featureList = document.querySelector('.features');
     let fragment = document.createDocumentFragment();
-    assets.items.forEach(function (asset, i) {
+    assets.items.forEach(function(asset, i) {
       let li = document.createElement('li');
       let a = document.createElement('a');
       let img = document.createElement('img');
@@ -31,6 +31,6 @@ client
     });
     featureList.appendChild(fragment);
   })
-  .catch(e => {
+  .catch(function(e) {
     console.log(e);
   });

@@ -198,12 +198,12 @@
   <script type="text/javascript" src="main.js"></script>
   <script>
     if ('serviceWorker' in navigator) {
-      window.addEventListener('load', () => {
+      window.addEventListener('load', function() {
         navigator.serviceWorker.register('/serviceWorker.js').then(
-          registration => {
+          function(registration) {
             console.log('You can now download my site as a PWA! :)');
           },
-          err => {
+          function(err) {
             console.log('ServiceWorker registration failed: ', err);
           }
         );
