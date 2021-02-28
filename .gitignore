@@ -7,4 +7,3 @@ _assets
 *.pem
 .env
 .DS_Store
-dist
