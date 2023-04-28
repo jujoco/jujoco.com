@@ -7,25 +7,22 @@
       src="https://www.googletagmanager.com/gtag/js?id=UA-142120769-1"
     ></script>
     <script>
-      window.dataLayer = window.dataLayer || []
+      window.dataLayer = window.dataLayer || [];
       function gtag() {
-        dataLayer.push(arguments)
+        dataLayer.push(arguments);
       }
-      gtag('js', new Date())
+      gtag('js', new Date());
 
-      gtag('config', 'UA-142120769-1')
+      gtag('config', 'UA-142120769-1');
     </script>
     <title>Jujoco | Julian J. Cobos</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Julian Cobos is a Software Engineer based in Los Angeles, CA."
-    />
+    <meta name="description" content="Julian Cobos Portfolio" />
     <meta name="author" content="Julian J. Cobos" />
     <meta
       name="keywords"
-      content="Frontend Engineer Portfolio, Software Engineer Portfolio, Web Developer Portfolio, JavaScript, React, HTML, CSS, Node, Webpack"
+      content="Frontend Engineer Portfolio, Software Engineer Portfolio, Web Developer Portfolio, JavaScript, React, TypeScript, HTML, CSS, Node"
     />
     <meta name="theme-color" content="#003366" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
@@ -34,14 +31,16 @@
     <link rel="stylesheet" href="./css/main.css" />
   </head>
 
-  <body class="is-preload">
-    <!-- Wrapper -->
+  <body>
+    <!-- Content Wrapper -->
     <div id="wrapper">
       <!-- Header -->
       <header id="header" class="alt">
         <span class="logo"><img src="./images/jujoco192.png" alt="" /></span>
         <h1>Julian J. Cobos</h1>
-        <p>A Software Engineer based in Santa Monica, CA.</p>
+        <p>
+          A Software Engineer currently living between Paris 🇫🇷 and Berlin 🇩🇪
+        </p>
       </header>
 
       <!-- Nav -->
@@ -49,7 +48,6 @@
         <ul>
           <li><a href="#intro" class="active">Introduction</a></li>
           <li><a href="#first">Projects</a></li>
-          <li><a href="#second">Tools</a></li>
           <li><a href="#cta">Contact</a></li>
         </ul>
       </nav>
@@ -60,16 +58,16 @@
         <section id="intro" class="main">
           <div class="spotlight">
             <div class="content">
-              <header class="major">
-                <h2>Hi, I'm Julian.</h2>
-              </header>
+              <div class="major">
+                <h2>Hey, I'm Julian.</h2>
+              </div>
               <p>
-                I’m a Frontend Software Engineer with up-to-date experience
-                creating scalable full-stack web applications. I’ve worked
-                closely with product managers, designers, and software engineers
-                to build the next generation of products leveraging JavaScript
-                libraries such as React and Gatsby. I enjoy writing clean code,
-                adhering to best practices, and working in a collaborative
+                A front-end developer with 5 years of experience building web
+                applications. I've worked closely with project managers,
+                designers, and fellow software developers to build the next
+                generation of web-based applications leveraging both client-side
+                and server-side rendered architectures. I enjoy writing clean
+                code, adhering to best practices, and working in a collaborative
                 environment. Feel free to reach out and discuss software
                 engineering opportunities.
               </p>
@@ -84,11 +82,53 @@
 
         <!-- Projects Section-->
         <section id="first" class="main special">
-          <header class="major">
+          <div class="major">
             <h2>Projects</h2>
-          </header>
-          <ul class="features"></ul>
-          <footer class="major">
+          </div>
+
+          <ul class="features">
+            <li>
+              <img
+                src="./images/trx.jpg"
+                class="icon major"
+                alt="TRX Fitness"
+              />
+              <h3>TRX</h3>
+              <p>TRX eCommerce store and User dashboard</p>
+            </li>
+
+            <li>
+              <img
+                src="./images/hyatt.jpg"
+                class="icon major"
+                alt="Hyatt Hotels"
+              />
+              <h3>Hyatt Hotels</h3>
+              <p>SSR web app with custom SPA React booking/checkout features</p>
+            </li>
+
+            <li>
+              <img
+                src="./images/vitacoco.jpg"
+                class="icon major"
+                alt="Vita Coco"
+              />
+              <h3>Vita Coco</h3>
+              <p>Product landing page</p>
+            </li>
+
+            <li>
+              <img
+                src="./images/adp_run.jpg"
+                class="icon major"
+                alt="ADP web app"
+              />
+              <h3>ADP</h3>
+              <p>Dashboard App</p>
+            </li>
+          </ul>
+
+          <div class="major">
             <ul class="actions special">
               <li>
                 <a
@@ -100,55 +140,20 @@
                 >
               </li>
             </ul>
-          </footer>
-        </section>
-
-        <!-- Tools Section -->
-        <section id="second" class="main special">
-          <header class="major">
-            <h2>Tools</h2>
-            <p>
-              As a Software Engineer, I have many tools at my disposal that will
-              get the job done. But I take the time to carefully pick out my
-              tools to efficiently get a job done.
-            </p>
-          </header>
-          <ul class="statistics">
-            <li class="style2">
-              <span class="icon fa-file-code"></span>
-              Code
-            </li>
-            <li class="style4">
-              <span class="icon solid fa-check-double"></span>
-              Test
-            </li>
-            <li class="style3">
-              <span class="icon solid fa-search"></span>
-              Review
-            </li>
-            <li class="style1">
-              <span class="icon solid fa-code-branch"></span>
-              Control
-            </li>
-            <li class="style5">
-              <span class="icon solid fa-plane-departure"></span>
-              Deploy
-            </li>
-          </ul>
-          <p class="content"></p>
+          </div>
         </section>
 
         <!-- Contact Section -->
         <section id="cta" class="main special">
-          <header class="major">
+          <div class="major">
             <h2>Lets Chat!</h2>
             <p>
               If you have a project that you want to get started, think you need
               my<br />
               help with something or just fancy saying hey, then get in touch.
             </p>
-          </header>
-          <footer class="major">
+          </div>
+          <div class="major">
             <ul class="actions special">
               <li>
                 <a
@@ -168,7 +173,7 @@
                 >
               </li>
             </ul>
-          </footer>
+          </div>
         </section>
       </div>
 
@@ -180,25 +185,6 @@
         </section>
         <section>
           <h2>Contact Info</h2>
-          <dl class="alt">
-            <dt>City</dt>
-            <dd>Los Angeles, CA</dd>
-            <dt>Email</dt>
-            <dd>
-              <a href="mailto:jujocotm@gmail.com" target="_blank"
-                >jujocotm@gmail.com</a
-              >
-            </dd>
-            <dt>LinkedIn</dt>
-            <dd>
-              <a
-                href="https://www.linkedin.com/in/jujoco/"
-                target="_blank"
-                rel="noopener"
-                >linkedin.com/in/jujoco</a
-              >
-            </dd>
-          </dl>
           <ul class="icons">
             <li>
               <a
@@ -242,28 +228,27 @@
             </li>
           </ul>
         </section>
-        <p class="copyright">Jujoco&trade; &copy; 2021</p>
+        <p class="copyright">Jujoco&trade; &copy; 2023</p>
       </footer>
     </div>
 
     <!-- Scripts -->
-    <script type="text/javascript" src="bundle.js"></script>
     <script>
       if ('serviceWorker' in navigator) {
         window.addEventListener('load', function () {
           navigator.serviceWorker.register('/serviceWorker.js').then(
             function (registration) {
-              console.log('You can now download my site as a PWA! :)')
+              console.log('You can now download my site as a PWA! :)');
             },
             function (err) {
-              console.log('ServiceWorker registration failed: ', err)
+              console.log('ServiceWorker registration failed: ', err);
             }
-          )
-        })
+          );
+        });
       }
       console.log(
         "Hi There! Thanks for visiting my page. If you're hiring frontend developers, I would love to hear about it."
-      )
+      );
     </script>
   </body>
 </html>
