@@ -4,7 +4,7 @@
   "description": "Personal site",
   "private": true,
   "engines": {
-    "node": ">=10.0.0"
+    "node": ">=18.0.0"
   },
   "scripts": {
     "build": "webpack",
@@ -27,13 +27,6 @@
     "url": "https://github.com/jujoco/jujoco.github.io/issues"
   },
   "homepage": "https://github.com/jujoco/jujoco.github.io#readme",
-  "dependencies": {
-    "body-parser": "^1.18.3",
-    "contentful": "^7.10.0",
-    "express": "^4.16.4",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6"
-  },
   "devDependencies": {
     "@babel/core": "^7.4.3",
     "@babel/preset-env": "^7.4.3",
