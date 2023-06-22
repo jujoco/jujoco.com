@@ -108,3 +108,19 @@ a {
     padding: 0 80px;
   }
 }
+@media (min-width: 1024px) {
+  .main {
+    padding: 0 120px;
+  }
+  .footer {
+    padding: 0 120px;
+  }
+}
+@media (min-width: 1280px) {
+  .main {
+    padding: 0 180px;
+  }
+  .footer {
+    padding: 0 180px;
+  }
+}
